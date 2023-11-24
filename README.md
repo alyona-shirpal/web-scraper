@@ -14,7 +14,7 @@ This is a starter template for building a TypeScript-based Node.js backend. It c
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/[repo-name]
+    git clone https://github.com/alyona-shirpal/back-ts-starterr.git
     ```
 
 2. **Navigate to the project directory:**
