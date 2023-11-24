@@ -7,12 +7,10 @@
         "dev": "nodemon",
         "start": "node -r dotenv/config ./dist/app.js",
         "build": "tsc && tsc-alias --project tsconfig.json",
-        "posttest:once": "npm run check",
-        "check": "eslint -c .eslintrc.fix.json '{src,test}/**/*.{ts,js}'",
-        "fix": "eslint -c .eslintrc.fix.json --fix '{src,test}/**/*.{ts,js}'"
-    },
-    "_moduleAliases": {
-        "src": "build/src/"
+        "fix": "eslint -c .eslintrc.fix.json --fix '{src,test}/**/*.{ts,js}'",
+        "lint": "eslint --ext .ts ./src && npm run type:check",
+        "lint:fix": "eslint --ext .ts ./src --fix",
+        "type:check": "tsc --noEmit"
     },
     "devDependencies": {
         "@jaxin007/eslint-config-backend": "^1.0.4",
@@ -50,7 +48,6 @@
         "cors": "^2.8.5",
         "dotenv": "^8.6.0",
         "express": "^4.17.2",
-        "nodemon": "^3.0.1",
-        "yargs": "^17.2.1"
+        "nodemon": "^3.0.1"
     }
 }

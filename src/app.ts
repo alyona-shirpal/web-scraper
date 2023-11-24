@@ -1,7 +1,8 @@
 import cors from 'cors';
 import express from 'express';
-import { newRoute } from './routes/new-route';
 import dotenv from 'dotenv';
+
+import { newRoute } from './routes/new-route';
 dotenv.config();
 
 async function main(): Promise<void> {
