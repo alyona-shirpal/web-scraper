@@ -1,37 +1,42 @@
-# TypeScript Node.js Backend Starter
+# Web Scraper Project
 
-This is a starter template for building a TypeScript-based Node.js backend. It comes pre-configured with ESLint for code linting and a basic TypeScript configuration.
+This project is a web scraper built with Puppeteer to extract data from the [bt.rozetka.com.ua](https://bt.rozetka.com.ua) website. The extracted data is stored in a PostgresSQL database using the Prisma ORM.
 
-## Getting Started
+## Setup
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) installed on your machine.
-- [npm](https://www.npmjs.com/) (Node Package Manager) for installing dependencies.
+- Node.js installed
+- Docker installed
 
 ### Installation
 
-1. **Clone the repository:**
+1. Clone the repository
+2. Install dependencies
+   ```sh
+   npm install 
 
-    ```bash
-    git clone https://github.com/alyona-shirpal/back-ts-starterr.git
-    ```
 
-2. **Navigate to the project directory:**
+### Start PostgresSQL container
+`` docker pull postgres``
 
-    ```bash
-    cd back-ts-starterr
-    ```
+``` docker run --name postgres-container -e POSTGRES_PASSWORD=your_password -p 5432:5432 -d postgres ```
 
-3. **Install dependencies:**
+### Configuration
+ 1. .env file in the root directory
+ 2. Add the following environment variables:
+   - DATABASE_URL="postgresql://username:password@localhost:5432/database_name"
+   - BACKEND_PORT
 
-    ```bash
-    npm install
-    ```
 
-### Development
+### Running the Scraper
+To start the scraper, run:
+``` npm run dev```
 
-To start the development server, run:
 
-```bash
-npm run dev
+## Usage
+### Scraping Data
+Send a GET request to` /scraper` to start the scraping process.
+
+### Viewing Scraped Data
+Send a GET request to` /get-items` to view the scraped data.

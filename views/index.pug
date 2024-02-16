@@ -1,0 +1,9 @@
+link(rel='stylesheet', href='/styles.css')
+.container
+  each card in cards
+      .card
+          img(src=card.imgUrl, alt=card.title)
+          h2= card.title
+          p.price #{card.price}
+          p.source
+              a(href=card.source, target="_blank")= card.source
